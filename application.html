@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAWABU SCHOOL|| CONTACT</title>
+     <script src="https://kit.fontawesome.com/f5826c345c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="contact-body">
+    <div id="header"></div>
+    <main>
+    <section id="contact">
+        <div class="contact-heading">
+             <h2>CONTACT US</h2>
+
+        </div>
+        <div class="contact-content">
+            <div class="contactform">
+                <form  id="contact-form" action="connect.php" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your name*</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="number">Your Phone Number:</label>
+                        <input type="tel" name="phone" id="number" placeholder="eg 07......86" required>
+                    </div>
+                     <div class="form-group">
+                       <label for="email">Enter Your Email*</label>
+                         <input type="email" name="email" id="email" placeholder="myname@gmail.com" required>
+                        
+                    </div>
+                     <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" placeholder="What is this regarding" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="question">Your Question</label>
+                       <textarea name="question" id="question" rows="5" placeholder="How can we help you" required></textarea>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Submit message">
+                    </div>
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+    </main>
+    <div id="footer"></div>
+    <script src="jawabu.js"></script>
+    
+</body>
+</html>

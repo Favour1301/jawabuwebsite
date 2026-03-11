@@ -1,0 +1,9 @@
+:root {
+  --text-color: #f8fafc;        /* soft white background */
+  --snd-bg-color:#1F2937 ;   
+    --accent-gold: #fbbf24;
+  --primary-color: #1e3a8a;   /* deep school blue */
+  --accent-color: #dc2626;    /* school red (buttons, highlights) */
+   --line-width: 80px;
+  --bg-color: #111827;      /* almost black (easy to read) */
+}
