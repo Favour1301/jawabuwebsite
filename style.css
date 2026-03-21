@@ -522,28 +522,6 @@ main{
     text-align:center;
     color:var(--text-color);
 }
-@media(max-width:600px){
-    .hero-content h1 {
-    white-space: normal;   /* ✅ allow wrapping */
-    border-right: none;    /* optional: remove typing cursor */
-    animation: none;       /* optional: disable typing effect */
-    width: 100%;
-    font-size: 36px;       /* reduce size for mobile */
-    text-align: center;
-  }
-    #montessori_header h1, #CBE_header h1 {
-        font-size: 1.8rem; /* Smaller headers for small screens */
-    }
-    p {
-        font-size: 1rem;  
-        line-height: 1.6;
-    }
-    section {
-        padding: 40px 0;   
-    }
-
-}
-
 
 
 
