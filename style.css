@@ -5,6 +5,10 @@
     text-decoration:none;
     font-family:'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
     border:none;
+    outline: 1px solid red;
+}
+body {
+  overflow-x: hidden;
 }
 :root {
   --text-color: #f8fafc;        /* soft white background */
@@ -125,16 +129,24 @@
     background-color: rgba(255,255,255,0.08);
     padding-left: 25px;           /* slight slide effect */
 }
-@media(max-width:768px){
+@media(max-width:600px){
     .menu-toggle{
         display:block;
         cursor:pointer;
         color:var(--text-color);
         font-size:24px;
+        margin-left:0;
 
+    }
+    .logo{
+        font-size:24px;
+        text-align:center;
+        width:auto;
     }
     .header-container{
         flex-wrap:wrap;
+        padding:10px 15px;
+        max-width:100%;
     }
     #navbar{
         display:none;
@@ -143,8 +155,9 @@
         left:0;
         width:100%;
         background:var(--primary-color);
-        padding:20px;
+        padding:20px 15px;
         margin-top:10px;
+        overflow-x:hidden;
     }
     #navbar.active{
         display:block;
@@ -153,11 +166,15 @@
     #navbar>ul{
         flex-direction:column;
         gap:10px;
+        width:100%;
     }
     #navbar .dropdown-menu{
-        position:static;
-        width:100%;
-        box-shadow:none;
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+
+
     }
 }
 
@@ -168,7 +185,6 @@
     height:100vh;
     background-image:url('Images/jawabubanner.jpeg');
     background-size:cover;
-    position:relative;
     background-repeat:no-repeat;
     background-position:center;
     display:flex;
@@ -177,25 +193,22 @@
     align-items:center;
     color:var(--text-color);
     position:relative;
+    padding:20px;
+    text-align:center;
 
 }
 #hero-section::after{
     content:"";
     position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    width:100%;
-    height:100%;
+    inset:0;
     background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
     
 
 }
 .hero-content{
-    margin-top:20px;
     position:relative;
-    z-index:100;
+    z-index:2;
+    max-width:900px;
 }
 .hero-content h1{
     font-size:80px;
@@ -204,6 +217,7 @@
     white-space:nowrap;
     border-right:4px solid white;
     width:0;
+    display:inline-block;
     animation:typing 3s steps(25,end) forwards, blink 0.8s step-end infinite;
 }
 @keyframes typing{
@@ -239,6 +253,7 @@
     }
 }
 .hero-content a{
+    display:inline-block;
     padding:12px 24px;
     background:var(--accent-color);
     color:var(--text-color);
@@ -255,38 +270,37 @@
 }
 .location{
     position:relative;
-    z-index:100;
+    z-index:2;
     margin-top:100px;
-    padding:50px 60px;
+    padding:40px 50px;
     background:var(--primary-color);
     color:var(--text-color);
-    border-radius:50px;
-    font-size:25px;
+    border-radius:40px;
+    font-size:22px;
+    text-align:centerl
 }
 /*carriculum section code*/
 .carriculum{
-    padding:100px 0;
+    padding:80px 20px;
     background-color:var(--bg-color);
     color:var(--text-color);
-    margin-top:100px;
 }
 .carriculum-header{
-    margin-bottom:100px;
-    margin-top:10px;
+ text-align:center;
+    margin-top:60px;
     
 }
 .carriculum-header h2{
     font-size:32px;
     margin-bottom:20px;
     font-weight:600;
-     text-align:center;
 }
 .carriculum-header h2::after{
     content:" ";
     display:block;
     width:100px;
     height:5px;
-    margin:10px auto 0;
+    margin:10px auto ;
     border-radius:3px;
     background-color:var(--text-color);
 
@@ -297,12 +311,10 @@
 
 .carriculum-container{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    margin:0;
-    padding:0;
+    grid-template-columns:2 1fr;
 }
 .carriculum-box{
-padding:120px 40px;
+padding:80px 20px;
 text-align:center;
 color:white;
 }
@@ -318,8 +330,8 @@ color:white;
     
 }
 .carriculum-box p{
-    margin:0 20px;
     font-size:16px;
+    margin:10px 0;
     
     
 }
@@ -327,10 +339,10 @@ color:white;
     display:inline-block;
     margin-top:20px;
     background-color:var(--text-color);
-    padding:10px 6px;
+    padding:10px 12px;
     border-radius:8px;
     color:var(--bg-color);
-    transition:all 0.3s ease;
+    transition: 0.3s ease;
 
     
     
@@ -352,10 +364,11 @@ color:white;
 /*Pillars section code*/
 #pillars{
     background-color:var(--snd-bg-color);
+    padding:60px; 20px;
 }
 .pillar_header{
     text-align:center;
-    font-size:40px;
+    font-size:32px;
     font-weight:bold;
     background-color:var(--bg-color);
     color:white;
@@ -363,9 +376,8 @@ color:white;
 }
 .pillar_container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(400px,1fr));
-    gap:10px;
-    justify-content:center;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
 }
 .pillar_box{
     background-color:var(--accent-color);
@@ -377,7 +389,7 @@ color:white;
 }
 .pillar_box img{
     width:100%;
-    height:400px;
+    height:250px;
     object-fit:cover;
 }
 .pillar_box h3{
@@ -397,7 +409,7 @@ color:white;
     display:inline-block;
     margin:10px;
     background-color:var(--text-color);
-    padding:10px 6px;
+    padding:10px 12px;
     border-radius:8px;
     color:var(--bg-color);
     transition:all 0.3s ease;
@@ -409,6 +421,33 @@ color:white;
     transform:translateY(-2px);
 
 
+}
+@media (max-width: 600px) {
+
+  .hero-content h1 {
+    white-space: normal;
+    animation: none;
+    border-right: none;
+    width: 100%;
+    font-size: 32px;
+  }
+
+  .hero-content h2 {
+    font-size: 18px;
+  }
+
+  .location {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  .carriculum-container {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar_box img {
+    height: 200px;
+  }
 }
 
 
@@ -483,7 +522,15 @@ main{
     text-align:center;
     color:var(--text-color);
 }
-@media(max-width:768px){
+@media(max-width:600px){
+    .hero-content h1 {
+    white-space: normal;   /* ✅ allow wrapping */
+    border-right: none;    /* optional: remove typing cursor */
+    animation: none;       /* optional: disable typing effect */
+    width: 100%;
+    font-size: 36px;       /* reduce size for mobile */
+    text-align: center;
+  }
     #montessori_header h1, #CBE_header h1 {
         font-size: 1.8rem; /* Smaller headers for small screens */
     }
