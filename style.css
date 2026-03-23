@@ -5,7 +5,7 @@
     text-decoration:none;
     font-family:'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
     border:none;
-    outline: 1px solid red;
+   
 }
 body {
   overflow-x: hidden;
@@ -211,30 +211,38 @@ body {
     max-width:900px;
 }
 .hero-content h1{
-    font-size:80px;
+    font-size:50px;
+    line-height: 1.2;
     margin-bottom:16px;
     overflow:hidden;
     white-space:nowrap;
-    border-right:4px solid white;
+    /*border-right:4px solid white;*/
     width:0;
-    display:inline-block;
-    animation:typing 3s steps(25,end) forwards, blink 0.8s step-end infinite;
+    display:block;
+    animation: typing 3.5s steps(40, end) forwards,
+    stopBlink 0.7s step-end 6 forwards;
 }
+
 @keyframes typing{
     from{
         width:0;
 
     }
     to{
-        width:100%;
+        width:28ch;
     }
 }
-    @keyframes blink{
-        50%{
-            border-color:transparent;
-        }
-       
+@keyframes  stopBlink {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+    100%{
+        border-color:transparent;
+    }
 }
+
+   
+       
+
 .hero-content h2{
     font-size:24px;
     margin-bottom:40px;
@@ -255,7 +263,7 @@ body {
 .hero-content a{
     display:inline-block;
     padding:12px 24px;
-    background:var(--accent-color);
+    background:var(--primary-color);
     color:var(--text-color);
     border-radius:6px;
     font-weight:600;
@@ -265,7 +273,7 @@ body {
 }
 .hero-content a:hover{
     transform:translateY(-4px);
-    background:var(--primary-color);
+    background:var(--main-color);
     transform:scale(1.05);
 }
 .location{
@@ -422,14 +430,16 @@ color:white;
 
 
 }
-@media (max-width: 600px) {
+
+  @media (max-width: 600px) {
 
   .hero-content h1 {
-    white-space: normal;
-    animation: none;
-    border-right: none;
-    width: 100%;
-    font-size: 32px;
+    font-size: 36px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    width: 0;
+    animation: typing 3s steps(28, end) forwards, blink 0.8s step-end infinite;
   }
 
   .hero-content h2 {
@@ -461,7 +471,7 @@ color:white;
   .pillar_box p{
     padding:15px 12px;
     font-size:14px;
-    
+
   }
 
   .pillar_box img {
@@ -755,10 +765,10 @@ transition:all 0.3s ease,transform 0.2s active;
     }
 }
 #footer{
-    background-color:var(--accent-color);
+    background-color:black;
     color:var(--text-color);
-    padding:60px 20px  20px;
-    border-top:3px solid(--accent-gold)
+    padding:40px 15px  10px;
+   
 }
 .footer-container{
      display:flex;
@@ -770,27 +780,27 @@ transition:all 0.3s ease,transform 0.2s active;
 }
 .footer-section{
     flex:1;
-    min-width:250px;
-    margin-bottom:30px;
-    padding:0 15px;
+    min-width:200px;
+    margin-bottom:20px;
+    padding:0 10px;
 }
 .footer-section h3{
-    margin-bottom:20px;
-    font-size:20px;
+    margin-bottom:10px;
+    font-size:16px;
     color:var(--accent-gold);
     text-transform:uppercase;
 
 }
 .footer-section a{
-    color:blue;
+    color:white;
     text-decoration:none;
     margin-right:10px;
     display:inline-block;
-
+    transition:0.3s ease; /* ADD THIS */
 }
 .footer-section a i{
     font-size:20px;
-    
+    transition:0.3s;
 }
 .footer-section a:hover{
     color:#CC0000;
@@ -807,18 +817,24 @@ transition:all 0.3s ease,transform 0.2s active;
     border-radius:8px;
     margin-top:10px;
     width:100%;
-    height:200px;
+    height:150px;
     filter: grayscale(20%);
 }
 /*responsive footer fo mobile*/
-@media(max-width:768px){
+@media(max-width:600px){
+    #footer{
+        padding:30px 10px 10px;
+    }
     .footer-container{
         flex-direction:column;
         text-align:center;
     }
     .footer-section{
-        margin:15px 0;
+        margin:10px 0;
         min-width:100%;
+    }
+    .footer-section iframe{
+        height:120px;
     }
     .footer-section i{
         margin:0 10px;
