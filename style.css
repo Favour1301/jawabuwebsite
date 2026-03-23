@@ -276,6 +276,7 @@ body {
     background:var(--main-color);
     transform:scale(1.05);
 }
+
 .location{
     position:relative;
     z-index:2;
@@ -285,8 +286,31 @@ body {
     color:var(--text-color);
     border-radius:40px;
     font-size:22px;
-    text-align:centerl
+    text-align:center;
 }
+@media(max-width:600px){
+    #hero-section{
+    height: auto;          /* ✅ shrink based on content */
+    padding: 80px 20px;    /* ✅ control spacing manually */
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+    white-space: normal;
+    overflow: hidden;
+    width: 100%;           
+    animation: none;       
+  }
+   .location {
+    font-size: 18px;
+    padding: 20px;
+  }
+}
+
+
+  
+
+
 /*carriculum section code*/
 .carriculum{
     padding:80px 20px;
@@ -369,6 +393,14 @@ color:white;
 .box2 {
     background-color: #00b894; /* green */
 }
+
+
+  .hero-content h2 {
+    font-size: 18px;
+  }
+
+
+
 /*Pillars section code*/
 #pillars{
     background-color:var(--snd-bg-color);
@@ -432,24 +464,6 @@ color:white;
 }
 
   @media (max-width: 600px) {
-
-  .hero-content h1 {
-    font-size: 36px;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid white;
-    width: 0;
-    animation: typing 3s steps(28, end) forwards, blink 0.8s step-end infinite;
-  }
-
-  .hero-content h2 {
-    font-size: 18px;
-  }
-
-  .location {
-    font-size: 18px;
-    padding: 20px;
-  }
 
   .carriculum-container {
     grid-template-columns: 1fr;
