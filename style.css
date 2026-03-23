@@ -308,18 +308,15 @@ body {
 }
 
 
-  
-
-
 /*carriculum section code*/
 .carriculum{
-    padding:80px 20px;
+    padding:60px 20px;
     background-color:var(--bg-color);
     color:var(--text-color);
 }
 .carriculum-header{
  text-align:center;
-    margin-top:60px;
+ margin-top:0;
     
 }
 .carriculum-header h2{
@@ -343,10 +340,11 @@ body {
 
 .carriculum-container{
     display:grid;
-    grid-template-columns:2 1fr;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    margin-top:40px;
 }
 .carriculum-box{
-padding:80px 20px;
+padding:40px 20px;
 text-align:center;
 color:white;
 }
@@ -420,11 +418,12 @@ color:white;
     gap:20px;
 }
 .pillar_box{
-    background-color:var(--accent-color);
+    background-color:white;
     border-radius:8px;
     overflow:hidden;
     text-align:center;
     border:1px solid grey;
+    color:black;
 
 }
 .pillar_box img{
@@ -465,9 +464,7 @@ color:white;
 
   @media (max-width: 600px) {
 
-  .carriculum-container {
-    grid-template-columns: 1fr;
-  }
+ 
   #pillars{
     padding:20px 10px;
 
